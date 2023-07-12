@@ -1,15 +1,18 @@
-name: Dispatch Workflow
+name: Trigger Workflow in PGM02C_UT
 
 on:
   repository_dispatch:
-    types: [trigger-test-case]
+    types:
+      - trigger-workflow
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  trigger:
+    runs-on: self-hosted
 
     steps:
-      - name: PGM02C_UT
-        uses: actions/checkout@v2
-
-      # Add your desired workflow steps here
+      - name: Trigger Workflow in PGM02C_COB
+        uses: saikirangan/PGM02C_UT-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_B_PAT }}
+          repository: saikirangan/PGM02C_UT
+          event-type: trigger-workflow
