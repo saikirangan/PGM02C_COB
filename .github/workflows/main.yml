@@ -28,5 +28,5 @@ jobs:
           curl -X POST https://api.github.com/repos/saikirangan/PGM02C_UT/dispatches 
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.PGM02C_UT }} \
-          --data '{
+    
       - uses: actions/checkout@v3
