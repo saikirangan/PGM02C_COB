@@ -2,7 +2,7 @@ name: Dispatch Workflow
 
 on:
   repository_dispatch:
-    types: [trigger-event-type]
+    types: [trigger-test-case]
 
 jobs:
   build:
