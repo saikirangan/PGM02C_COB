@@ -15,4 +15,4 @@ jobs:
         with:
           token: ${{ secrets.REPO_B_PAT }}
           repository: saikirangan/PGM02C_UT
-          event-type: trigger-workflow
+          event-type: trigger-workflow 
