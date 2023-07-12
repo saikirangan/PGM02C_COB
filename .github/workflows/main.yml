@@ -1,5 +1,4 @@
-name: Trigger Workflow in PGM02C_UT
-
+name: Topaz for Total Test
 on:
   repository_dispatch:
     types:
