@@ -1,0 +1,15 @@
+name: Dispatch Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-event-type]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: PGM02C_UT
+        uses: actions/checkout@v2
+
+      # Add your desired workflow steps here
