@@ -1,17 +1,16 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. PGM02C.
+       PROGRAM-ID. PGM02D.
        ENVIRONMENT DIVISION.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
+       01 WS-TOT PIC 9(03).
+       LINKAGE SECTION.
        COPY CPY02C.
-       PROCEDURE DIVISION.
-           INITIALIZE WS-VARS.
-           ACCEPT WS-X.
-           ACCEPT WS-Y.
-           ACCEPT WS-Z.
-           CALL 'PGM02D' USING WS-VARS.
-           IF WS-INVALID THEN
-              MOVE +12  TO RETURN-CODE
+       PROCEDURE DIVISION USING WS-VARS.
+           COMPUTE WS-TOT = WS-X - WS-Y.
+           DISPLAY 'SUM OF ' WS-X ' AND ' WS-Y ' IS: ' WS-TOT.
+           IF WS-TOT NOT = WS-Z THEN
+              SET WS-INVALID TO TRUE
            ELSE
-              MOVE ZERO TO RETURN-CODE.
+              SET WS-VALID TO TRUE.
            GOBACK.
