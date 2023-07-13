@@ -25,6 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Test
         run: |
+         curl -X POST https://github.com/saikirangan/PGM02C_UT/tree/main/.github/workflows
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.PGM02C_UT }} \
+          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"$PGM02C_UT"'" }}'
         
     
       - uses: actions/checkout@v3
