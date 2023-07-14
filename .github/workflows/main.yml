@@ -11,7 +11,7 @@ jobs:
      
      steps:
         - name: trigger the automated test case in repo2 
-          uses: peter-evans/repository-dispatch@v2
+          uses: actions/checkout@v2
           with:
             token: ${{secrets.PGM02C_UT}}
             repository: saikirangan/PGM02C_UT
