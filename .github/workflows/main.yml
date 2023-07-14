@@ -7,7 +7,7 @@ on:
   
 jobs: 
   trigger-test:
-     runs-on: selfhost-runned
+     runs-on: any
      
      steps:
         - name: trigger the automated test case in repo2 
