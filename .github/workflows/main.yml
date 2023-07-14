@@ -1,34 +1,16 @@
-name: workflow_01
-on:
-  workflow_dispatch:
-     inputs:
-      workflow_02:
-        description: 'ًWorkflow 2 which will be triggered'
-        required: true
-        default: 'workflow_02'
-
-      workflow2_github_account:
-        description: Topaz for total test
-        required: true
-        default: saikirangan
-
-      workflow2_repo_github:
-        description: PGM02C_UT
-        required: true
-        default: 'PGM02C_UT' 
-
-jobs:
-  build:
-    runs-on: self-hosted
-
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Test
-        run: |
-         curl -X POST https://github.com/saikirangan/PGM02C_UT/tree/main/.github/workflows
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.PGM02C_UT }} \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"$PGM02C_UT"'" }}'
+name: trigger test in repo2
+on: workflow_dispatch
+jobs: 
+  trigger-test:
+     runs-on: selfhost-runned
+     
+     steps:
+        - name: trigger the automated test case in repo2 
+          uses: peter-evans/repository-dispatch@v2
+          with:
+            token: ${{secrets.PGM02C_UT}}
+            repository: saikirangan/PGM02C_UT
+            event-type: my-event1
+            client-payload: '{"github": ${{ toJson(github) }}}'
+  
         
-    
-      - uses: actions/checkout@v3
