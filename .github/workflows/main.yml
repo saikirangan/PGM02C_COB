@@ -2,8 +2,20 @@ name: trigger test in repo2
 
 on:
   push:
-    branches: [ master ]
- 
+    branches: [ master ] 
 
+  workflow_dispatch:
+  
+jobs: 
+  trigger-test:
+     runs-on: Runner06
+     
+     steps:
+        - name: trigger the automated test case in repo2 
+          uses: actions/checkout@v2
+          with:
+            token: ${{secrets.PGM02C_UT}}
+            repository: saikirangan/PGM02C_UT
+            event-type: my-event
       
         
