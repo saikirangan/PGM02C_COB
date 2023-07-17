@@ -2,8 +2,8 @@ name: Topaz work flow
 
 on:
   push:
-    branches: [ master ] 
-     
+    branches: [ main ] 
+     types: [my event] 
 # This is a basic workflow to help you get started with Actions for cli
   workflow_dispatch:
     inputs:
