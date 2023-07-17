@@ -1,4 +1,4 @@
-name: trigger test in repo2
+name: Topaz work flow
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
           uses: actions/checkout@v2
           with:
             token: ${{secrets.PGM02C_UT}}
-            repository: saikirangan/PGM02C_UT
+            repository: saikirangan/PGM02C_COB
             event-type: my-event
       
         
