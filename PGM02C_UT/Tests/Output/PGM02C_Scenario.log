@@ -1,0 +1,41 @@
+12:37:29.745 INFO      TOPAZ            ***************************************
+12:37:29.745 INFO      TOPAZ            ** Execution from Topaz with options **
+12:37:29.745 INFO      TOPAZ            ***************************************
+12:37:29.752 INFO      TOPAZ            Using repository: true
+12:37:29.752 INFO      TOPAZ            Repository URL: http://10.10.1.174:48226/totaltestapi/
+12:37:29.752 INFO      TOPAZ            ***************************************
+12:37:29.752 INFO      Engine           Test Scenario execution started
+12:37:29.752 INFO      Engine           Using context settings:
+  Engine Version                : 20.10.3.v20220524-1628_164
+  Environment id                : 63bf9cc1912e620ba0a93741
+  Environment type              : Batch
+  Operating system              : ZOS
+  zOS agent version             : NEWEST
+  Server address                : 10.10.1.172
+  Server port                   : 16196
+  Job execution timeout seconds : 600
+  Job info interval seconds     : 3
+  Socket read timeout           : 30
+  Encoding                      : ISO8859-1
+  Codepage                      : IBM-1047
+  Host user Id                  : ADCDS
+  Use Repository Server         : true
+  Account Information           : 
+  Dataset High Level Qualifier  : 
+12:37:29.752 INFO      Engine           Setting variables from context and context data extensions
+12:37:29.752 INFO      Engine             id: environmentId      value: 63bf9cc1912e620ba0a93741
+12:37:29.752 INFO      Engine             id: environmentType    value: BATCH
+12:37:29.752 INFO      Engine             id: userId             value: ADCDS
+12:37:29.752 INFO      Engine             id: accountingInfo     value: 
+12:37:29.752 INFO      Engine             id: datasetHQL         value: 
+12:37:29.752 INFO      Unittest         Interpreting Unittest of module: PGM02C testscenario path: PGM02C_Scenario.testscenario
+12:37:30.456 INFO      Unittest         Generating JCL on the mainframe from mainframe skeleton.
+12:37:30.456 INFO      Unittest         It is possible to use local JCL skeleton by placing runner JCL in a TTTRUNNER.jcl file in the JCL directory relative to the unit test scenario file. Its possible to use ${loadlibraries} for the steplib value after the TTTRUNNER: DD DISP=SHR,DSN=${loadlibraries}
+12:37:38.969 INFO      HCIClient        Job has been started at host with JobId:JOB06096
+12:37:38.969 INFO      Unittest         TTTRun was executed
+12:37:38.969 INFO      Unittest         TTTRunner job submitted with jobId:JOB06096
+12:37:39.481 INFO      Unittest         Waiting for Job to complete
+12:37:39.783 WARNING   Unittest         Unable to get job information from host. Server responded with an error. Message: XATZJINF error 1504: Job not found ReturnCode:0016
+12:37:45.215 INFO      Unittest         Job has completed, JobId:JOB06096
+12:37:52.300 INFO      Unittest         Execution completed
+12:37:52.300 INFO      Engine           Test Scenario execution ended
