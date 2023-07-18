@@ -73,5 +73,5 @@ jobs:
       # Runs a single command using the runners shell
       - run: echo "${{ secrets.PGM02C_UT }}"
       - name: Calling the CLI function
-        run: ${{ inputs.clipath }}TotalTestFTCLI -data "${{ inputs.workspace }}" -environment "${{ inputs.environment_id}}" -u "${{ inputs.userId }}" -p "${{ secrets.HCI_PASSWORD }}" -s "${{ inputs.repository_server }}" -cesu "${{ inputs.userId }}" -cesp "${{ secrets.HCI_PASSWORD }}" -f "${{ inputs.testFolderPath }}" --runner-jcl "${{inputs.jclFile}}" -R -G -v "6" -l "jenkins" -loglevel "info"
+        run: ${{ inputs.clipath }}TotalTestFTCLI.bat -data "${{ inputs.workspace }}" -environment "${{ inputs.environment_id}}" -u "${{ inputs.userId }}" -p "${{ secrets.HCI_PASSWORD }}" -s "${{ inputs.repository_server }}" -cesu "${{ inputs.userId }}" -cesp "${{ secrets.HCI_PASSWORD }}" -f "${{ inputs.testFolderPath }}" --runner-jcl "${{inputs.jclFile}}" -R -G -v "6" -l "jenkins" -loglevel "info"
   
