@@ -7,7 +7,7 @@
        LINKAGE SECTION.
        COPY CPY02C.
        PROCEDURE DIVISION USING WS-VARS.
-           COMPUTE WS-TOT = WS-X + WS-Y.
+           COMPUTE WS-TOT = WS-X - WS-Y.
            DISPLAY 'SUM OF ' WS-X ' AND ' WS-Y ' IS: ' WS-TOT.
            IF WS-TOT NOT = WS-Z THEN
               SET WS-INVALID TO TRUE
