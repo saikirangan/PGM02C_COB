@@ -1,32 +1,18 @@
-name: workflow_01
+name: Workflow1
+
 on:
-  workflow_dispatch:
-     inputs:
-      workflow_02:
-        description: 'ًWorkflow 2 which will be triggered'
-        required: true
-        default: 'workflow_02'
-
-      workflow2_github_account:
-        description: 'GitHub Account Owner'
-        required: true
-        default: ':saikirangan'
-
-      workflow2_repo_github:
-        description: 'repo-name'
-        required: true
-        default: ':PGM02C_UT' 
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  trigger:
     runs-on: self-hosted
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Test
-        run: |
-          curl -X POST https:https://github.com/saikirangan/PGM02C_UT/blob/main/.github/workflows/main.yml/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.ACTIONS_KEY }} \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
-      - uses: actions/checkout@v3
+      - name: Trigger Second Workflow
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACTIONS_KEY }}
+          repository: saikirangan/PGM02C_COB
+          event-type: trigger-second-workflow
