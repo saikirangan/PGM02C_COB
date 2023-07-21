@@ -1,9 +1,10 @@
-name: Second Workflow
+name: Workflow2
 
-on:
-  repository_dispatch:
-    types:
-      - trigger-second-workflow
+# Controls when the workflow will run
+on:  
+   push:
+    branches:
+      - main
 
   workflow_dispatch:
     inputs:
